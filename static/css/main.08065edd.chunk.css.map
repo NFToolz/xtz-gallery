@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/main.css"],"names":[],"mappings":"AAAA,KACE,iBAAkB,CAClB,eACF,CAEA,yCACE,YACF","file":"main.08065edd.chunk.css","sourcesContent":["body {\n  font-family: serif;\n  overflow: hidden;\n}\n\nmodel-viewer::part(default-progress-bar) {\n  display: none;\n}\n"]}
