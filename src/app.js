@@ -13,12 +13,14 @@ export default function App() {
   return (
     <HashRouter>
       <Switch>
-        <Route path="/:address" children={<Wallet />} />
-        <Route path="/" children={
+        <Route path="/:address">
+          <Wallet />
+        </Route>
+        <Route path="/">
           <div className="middle-out">
             <input type="text" placeholder="Address:" onChange={change} />
           </div>
-        } />
+        </Route>
       </Switch>
     </HashRouter>
   );
