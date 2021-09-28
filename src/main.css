@@ -1,0 +1,8 @@
+body {
+  font-family: serif;
+  overflow: hidden;
+}
+
+model-viewer::part(default-progress-bar) {
+  display: none;
+}
