@@ -1,17 +1,17 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Switch,
   Route
-} from "react-router-dom";
+} from 'react-router-dom';
 import Wallet from './components/wallet'
 import './main.css';
 
 export default function App() {
-  const change = e => document.location = e.target.value
+  const change = e => document.location = `#/${e.target.value}`;
 
   return (
-    <Router>
+    <HashRouter>
       <Switch>
         <Route path="/:address" children={<Wallet />} />
         <Route path="/" children={
@@ -20,6 +20,6 @@ export default function App() {
           </div>
         } />
       </Switch>
-    </Router>
+    </HashRouter>
   );
 }
