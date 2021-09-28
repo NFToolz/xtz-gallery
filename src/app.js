@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Image from './components/image';
 import XDirectory from './components/x-directory';
 import GLTF from './components/gltf';
+import Video from './components/video';
 import './main.css';
 
 export default function App() {
@@ -52,8 +53,12 @@ export default function App() {
     );
   }
 
-  function replaceIPFS(url) {
-    return (url) ? url.replace('ipfs://', 'https://cloudflare-ipfs.com/ipfs/') : null;
+  function replaceIPFS(url, alt) {
+    if (alt) {
+      return (url) ? url.replace('ipfs://', 'https://ipfs.io/ipfs/') : null;
+    } else {
+      return (url) ? url.replace('ipfs://', 'https://cloudflare-ipfs.com/ipfs/') : null;
+    }
   }
 
   function renderObject(object) {
@@ -70,6 +75,10 @@ export default function App() {
       case 'model/gltf-binary':
       case 'model/gltf+json':
         return <GLTF url={replaceIPFS(current.formats[0].uri)} />
+        break;
+      case 'video/mp4':
+      case 'video/ogg':
+        return <Video url={replaceIPFS(current.formats[0].uri, true)} />
         break;
     }
   }
