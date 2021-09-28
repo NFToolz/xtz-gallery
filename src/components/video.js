@@ -16,7 +16,7 @@ export default function Video({ url }) {
       autoPlay
       loop
       muted
-      playsinline
+      playsInline
       src={src}
     />
   );
