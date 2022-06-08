@@ -22,9 +22,9 @@ async function getTokens(address, offset = 0, tokens = []) {
 
 function replaceIPFS(url, alt) {
   if (alt) {
-    return (url) ? url.replace('ipfs://', 'https://ipfs.infura.io/') : null;
+    return (url) ? url.replace('ipfs://', 'https://ipfs.infura.io/ipfs/') : null;
   } else {
-    return (url) ? url.replace('ipfs://', 'https://ipfs.infura.io/') : null;
+    return (url) ? url.replace('ipfs://', 'https://ipfs.infura.io/ipfs/') : null;
   }
 }
 
